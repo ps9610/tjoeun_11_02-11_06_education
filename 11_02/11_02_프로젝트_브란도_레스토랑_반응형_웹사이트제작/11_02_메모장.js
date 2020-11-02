@@ -71,3 +71,33 @@
     brando.init();
 
 })(window,document,jQuery);
+
+// section01 hungry가 창 줄이고 늘릴 때마다 같이 움직이게
+section01Fn:    function(){
+           
+    var winH = 969;//
+    var hunH = $(".hungry").height();
+    var hunT = (winH-hunH)/2 //hungry top값을 자동화 시키면 창 크기에 따라서 hungry가 따라다니게 할 수 있음
+                            //ㄴ>이미지 맨 위 = (창높이 - 이미지높이) / 2
+
+    setTimeout(resizeFn,100);
+    function resizeFn(){                
+        winH = $(window).height();
+        $("#section01, #section02, #section03, #section04").css({ height:winH });
+        hunH = $(".hungry").height();//초기값
+        hunT = (winH-hunH)/2; //바뀐값 둘 다 필요함
+        $(".hungry").stop().animate({ top:hunT },300);
+    };
+
+    $(window).resize(function(){
+        resizeFn();
+    });
+
+//스무스 스크롤링 이벤트
+    $(".arrow-down-btn").on({
+        click : function(){
+            $("html,body").stop().animate({ scrollTop : 
+                $("#section02").offset().top},700);
+                //section01의 높이랑 section02의 탑값이 똑같아서 height이 다 내려간거지 만약 높이가 50이면 높이만큼만 가고 멈춰버림
+        }
+    })

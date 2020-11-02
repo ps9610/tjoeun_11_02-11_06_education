@@ -21,17 +21,31 @@
                 that.footerFn();
         },//브란도 레스토랑 전체에서 최초에 실행할 js
         headerFn:       function(){
-            
+
         },//헤더의 js
         section01Fn:    function(){
            
             var winH = 969;
-
+            //뭘 먼저 해야할지 우선순위 정리가 가장 첫번째
+            //1. hungry 이미지 탑 값 구하기 = (window top - hungry높이)/2;            
+                                //ㄴ> imgTop = (winH-imgH)/2;
+            var imgH = $(".hungry").height();
+            var imgTop = (winH-imgH)/2;
+    
             setTimeout(resizeFn,100);
             function resizeFn(){                
                 winH = $(window).height();
                 $("#section01, #section02, #section03, #section04").css({ height:winH });
+                imgH = $(".hungry").height();
+                imgTop = (winH-imgH)/2;
+                $(".hungry").css({ top:imgTop });
             };
+            //Smooth Scrolling Event
+            $(".arrow-down-btn").on({
+                click : function(){
+                    $("html,body").stop().animate({ scrollTop : $("#section02").offset().top},700);
+                }
+            });
 
             $(window).resize(function(){
                 resizeFn();
