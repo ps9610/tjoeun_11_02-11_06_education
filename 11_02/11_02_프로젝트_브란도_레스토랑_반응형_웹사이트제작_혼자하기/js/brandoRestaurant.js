@@ -23,12 +23,23 @@
         },
         section01Fn : function(){
             var s1H = 0;
+            var hunH = 0;
+            var imgH = 0;
             
             setTimeout(resizeFn,100);
             function resizeFn() {
                 s1H = $(window).height();
                 $("#section01, #section02, #section03, #section04").css({ height:s1H });
                 // console.log(s1H);
+                hunH = $(".main-txt").height();
+                imgH = (s1H-hunH)/2;
+                $(".main-txt").css({ top:imgH });
+                //smooth scorlling event
+                $(".arrow-down").on({
+                    click : function(){
+                        $("html,body").stop().animate({ scrollTop:$("#section02").offset().top },800)
+                    }
+                });
             }
             $(window).resize(function(){
                 resizeFn();

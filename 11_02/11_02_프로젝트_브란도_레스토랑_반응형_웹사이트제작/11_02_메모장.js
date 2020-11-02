@@ -73,6 +73,7 @@
 })(window,document,jQuery);
 
 // section01 hungry가 창 줄이고 늘릴 때마다 같이 움직이게
+    //ㄴ> 창 값이 줄어든다 = 이미지가 올라간다 = hungry 이미지의 탑 값을 resize에 적용시키기
 section01Fn:    function(){
            
     var winH = 969;//
