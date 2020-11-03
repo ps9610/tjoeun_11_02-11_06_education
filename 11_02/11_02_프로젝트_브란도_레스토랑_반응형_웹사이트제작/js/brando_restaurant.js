@@ -36,6 +36,7 @@
             function resizeFn(){                
                 winH = $(window).height();
                 $("#section01, #section02, #section03, #section04").css({ height:winH });
+                
                 imgH = $(".hungry").height();
                 imgTop = (winH-imgH)/2;
                 $(".hungry").css({ top:imgTop });
