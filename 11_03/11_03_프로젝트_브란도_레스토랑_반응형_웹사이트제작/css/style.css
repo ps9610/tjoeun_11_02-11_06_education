@@ -1,0 +1,24 @@
+@charset "UTF-8";
+ 
+#header {z-index:3;position:fixed;top:0;left:0;width:100%;border-bottom:1px solid rgba(225,225,225, 0.1);background:transparent;}
+#header .wrap {max-width:100%;width:1170px;height:75px;margin:0 auto;background:#c99;}
+            /* ㄴ> 앞으로 반응형이니까 모두 max-width, width 같이 써줘야됨 */
+#header .wrap .gap {}
+#header .wrap .gap .left {}
+#header .wrap .gap .left .logo {}
+#header .wrap .gap .left > nav {}
+#header .wrap .gap .right > aside {}
+#header .wrap .gap .right > aside > div{}
+#main   {z-index:2;position:relative;width:100%;}
+#main #section01/*넓이, 높이, 배경으로 확인하는게 제일 첫 순서*/ {z-index:1;position:relative;width:100%;background:url(../img/slider-img4.jpg) no-repeat 50% 0 fixed/* 스크롤안됨 */;background-size:100% 100%;}
+#main #section01::after {z-index:2;position:absolute;content:"";display:block;top:0;left:0;width:100%;height:100%;background:#252525;opacity:.7;}
+#main #section01 .hungry {z-index:3;position:absolute;display:inline-block;top:382px;width:100%;text-align:center;}/* 높이 잡으면 여기 박스도 반응형으로 만들어야되니까 높이X */
+#main #section01 .hungry > img {width:100%;max-width:542px;}/* max(min)-width ; 반응형할 때 많이 씀, hungry자체가 넓이 100%니까 max가 되는거임*/
+#main #section01 .arrow-down {z-index:3;position:absolute;bottom:60px;left:50%;margin-left:-16px;display:inline-block;width:32px;height:32px;}
+#main #section01 .arrow-down > a {display:block;width:100%;}
+#main #section01 .arrow-down > a > img {width:100%;}
+
+#main #section02 {width:100%;height:969px;background:url(../img/restaurant-img1.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#main #section03 {width:100%;height:969px;background:url(../img/restaurant-img2.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#main #section04 {width:100%;height:969px;background:url(../img/restaurant-img3.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#footer {z-index:1;position:relative;width:100%;}/* 모든 창높이는 본인 모니터의 창 높이로 */
