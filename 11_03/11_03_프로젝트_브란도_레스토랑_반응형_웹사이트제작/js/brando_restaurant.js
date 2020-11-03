@@ -21,11 +21,34 @@
                 that.footerFn();
         },//브란도 레스토랑 전체에서 최초에 실행할 js
         headerFn:       function(){
+            //scrolling
+            $(window).scroll(function(){
+                if( $(window).scrollTop()>=30 ){
+                    $("#header").addClass("addMobile")
+                }
+                else{
+                    $("#header").removeClass("addMobile")
+                }
+            });
+
+            //resize
+            var winW = 0;
+
+            $(window).resize(function(){
+                winW = $(window).width();
+                if( winW>990 ){
+                    $(".mobile-btn").removeClass("addClose");
+                }
+            });
+
+            //btn-click
             $(".mobile-btn").on({
                 click : function(){
                     $(this).toggleClass("addClose");
                 }
             });
+
+
         },//헤더의 js
         section01Fn:    function(){
            
