@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+@media all and (max-width:991px){
+#header .wrap .padding-wrap .left > i,
+#header .wrap .padding-wrap .left > nav,
+#header .wrap .padding-wrap .right > aside {display:none;}
+}

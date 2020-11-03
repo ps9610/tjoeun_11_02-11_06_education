@@ -8,7 +8,7 @@
     <meta name="Viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Title" content="Brando Restaurant">
     <meta name="Publisher" content="프론트엔드 박소혜">
-    <meta name="Author-date" content="2020-11-02"> 
+    <meta name="Author-date" content="2020-11-03"> 
     <meta name="Author" content="Brando">
     <meta name="Copyright" content="Brando">
     <meta name="Keywords" content="Brando, 웹표준,웹접근성,Bransdo Restaurant, Brando 반응형 웹사이트">
@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/fonts.css">
-
+    <link rel="stylesheet" href="./css/media.css">
+    
     <!-- 오픈소스 -->
     <script src="./js/lib/jquery-1.12.4.min.js"></script>
     <!-- <script src="./js/lib/prefixfree.min.js"></script> -->
@@ -57,23 +58,33 @@
 <div id="wrap">
     <header id="header">
         <div class="wrap">
-            <div class="padding-wrap">
+            <div class="padding-wrap fixedclear">
                 <div class="left">
                     <span><a href="#" title="브란도 로고 이미지"><img src="./img/logo-restaurant.png" alt="브란도 로고 이미지"></a></span>
+                    <i></i>
                     <nav>
                         <ul> 
-                            <a href="#" title="메인버튼"><li>ABOUT</li></a>
-                            <a href="#" title="메인버튼"><li>MENU</li></a>
-                            <a href="#" title="메인버튼"><li>CHEF</li></a>
-                            <a href="#" title="메인버튼"><li>GALLERY</li></a>
-                            <a href="#" title="메인버튼"><li>BLOG</li></a>
-                            <a href="#" title="메인버튼"><li>CONTACT</li></a>
+                            <li><a href="#" title="메인버튼">ABOUT</a></li>
+                            <li><a href="#" title="메인버튼">MENU</a></li>
+                            <li><a href="#" title="메인버튼">CHEF</a></li>
+                            <li><a href="#" title="메인버튼">GALLERY</a></li>
+                            <li><a href="#" title="메인버튼">BLOG</a></li>
+                            <li><a href="#" title="메인버튼">CONTACT</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="right">
-                    <span>BOOK YOUR TABLES?</span>
-                    <span><a href="#" title="예약하기">BOOK NOW</a></span>
+                    <aside>
+                        <span>BOOK YOUR TABLES?</span>
+                        <span><a href="#" title="예약하기">BOOK NOW</a></span>
+                    </aside>
+                    <div class="burger-bar">
+                        <a href="#" class="bar-btn" title="모바일 전용 메뉴버튼">
+                            <i class="bar1"></i>
+                            <i class="bar2"></i>
+                            <i class="bar3"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

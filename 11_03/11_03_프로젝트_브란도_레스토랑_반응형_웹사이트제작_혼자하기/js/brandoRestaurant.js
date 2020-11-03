@@ -18,7 +18,13 @@
                 that.section13Fn();
                 that.footerFn();
         },
-        headerFn : function(){},
+        headerFn : function(){
+            $(".bar-btn").on({
+                click : function(){
+                    $(this).toggleClass("addClose");
+                }
+            })
+        },
         section01Fn : function(){
             //윈도우 창 높이 = winT
             var winH = 0;
