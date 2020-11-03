@@ -4,4 +4,16 @@
 #header .wrap .padding-wrap .left > i,
 #header .wrap .padding-wrap .left > nav,
 #header .wrap .padding-wrap .right > aside {display:none;}
+#header .wrap .padding-wrap .right .burger-bar {display:block;}
+#main #section01, #main #section02, #main #section03, #main #section04 {background-attachment:scroll;}
+#main #section01 .main-txt > img {width:50%;}
+
+}
+
+@media all and (max-width:1199px){
+#header .wrap .padding-wrap .right > aside > span:first-child {display:none;}
+/* #header .wrap .gap .left {transition:all .4s;margin:100px;} */
+#header .wrap .padding-wrap .left > i {display:none;}
+#header .wrap .padding-wrap .right > aside > span:last-child {transition:all .4s;margin-left:-200px;}
+
 }

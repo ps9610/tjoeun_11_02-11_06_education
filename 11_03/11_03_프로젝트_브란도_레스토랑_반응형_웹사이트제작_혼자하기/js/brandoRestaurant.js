@@ -19,9 +19,26 @@
                 that.footerFn();
         },
         headerFn : function(){
+            $(window).scroll(function(){
+                if( $(window).scrollTop() >= 30 ){
+                    $("#header").addClass("addHeader");
+                }
+                else {
+                    $("#header").removeClass("addHeader");
+                }
+            })
+
             $(".bar-btn").on({
                 click : function(){
                     $(this).toggleClass("addClose");
+                }
+            })
+            
+            var winW=0;
+            $(window).resize(function(){
+                winW = $(window).width();
+                if(winW > 990){
+                    $(".bar-btn").removeClass("addClose");
                 }
             })
         },
