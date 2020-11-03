@@ -21,7 +21,11 @@
                 that.footerFn();
         },//브란도 레스토랑 전체에서 최초에 실행할 js
         headerFn:       function(){
-
+            $(".mobile-btn").on({
+                click : function(){
+                    $(this).toggleClass("addClose");
+                }
+            });
         },//헤더의 js
         section01Fn:    function(){
            

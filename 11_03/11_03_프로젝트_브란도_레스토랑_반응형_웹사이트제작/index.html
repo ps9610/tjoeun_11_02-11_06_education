@@ -21,6 +21,7 @@
 
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/response.css">
     <link rel="stylesheet" href="./css/fonts.css">
 
     <!-- 오픈소스 -->
@@ -57,10 +58,14 @@
 <div id="wrap">
     <header id="header">
         <div class="wrap"> <!-- 넓이 1170 -->
-            <div class="gap"> <!-- 양쪽패딩15px씩 전체넓이1140 -->
+            <div class="gap fixedclear"> <!-- 양쪽패딩15px씩 전체넓이1140 -->
                 <div class="left">
-                    <h1 class="logo"><a href="#" class="logo-btn" title="브란드 로고"><img src="./img/logo-restaurant.png" alt="브란도(Brando)"></a></h1>
-                    <nav>
+                    <h1 class="logo">
+                        <a href="#" class="logo-btn" title="브란드 로고">
+                            <img src="./img/logo-restaurant.png" alt="브란도(Brando)">
+                        </a><i></i>
+                    </h1>
+                    <nav id="nav">
                         <ul class="fixedclear">
                             <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">ABOUT</a></li>
                             <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">MENU</a></li>
@@ -72,12 +77,19 @@
                     </nav>
                 </div>
                 <div class="right">
-                    <aside>
+                    <aside id="aside">
                         <div>
                             <span>BOOK YOUR TABLES?</span>
                             <span><a href="#" title="예약하기 버튼">BOOK NOW</a></span>
                         </div>
                     </aside>
+                    <div class="mobile">
+                        <a href="#" class="mobile-btn" title="모바일 전용 메뉴바">
+                            <i class="mline mline1"></i>
+                            <i class="mline mline2"></i>
+                            <i class="mline mline3"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
