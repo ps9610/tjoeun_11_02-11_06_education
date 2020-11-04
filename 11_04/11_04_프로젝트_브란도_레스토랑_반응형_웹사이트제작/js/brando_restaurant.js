@@ -28,6 +28,7 @@
                 click : function(){ //클릭하면 다음과 같이 실행하라 : 
                     url = $(this).attr("href"); // url은 이 선택자의 속성을 가져오는 것이고,
                    $("html,body").stop().animate({ scrollTop: $( url ).offset().top },800) //html,body에서 0.6초 동안에url의 탑 값으로 스크롤 탑이라는 애니메이션이 실행되게 하라.
+                   $(".mobile-menu").hide();
                 }
             });
 
