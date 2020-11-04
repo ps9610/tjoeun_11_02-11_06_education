@@ -3,7 +3,7 @@
 #intro {background:url(../img/restaurant-img7.jpg) 50% 50%;}
 #header {z-index:3;position:fixed;top:0;left:0;width:100%;border-bottom:1px solid rgba(225,225,225, 0.1);background:transparent;transition:height .3s, background-color .5s;}
 #header.addMobile {height:65px;background:rgba(0,0,0, .7);}
-#header .wrap {max-width:1170px;width:100%;margin:0 auto;}
+#header .wrap {position:relative;max-width:1170px;width:100%;margin:0 auto;}
             /* ㄴ> 앞으로 반응형이니까 모두 max-width, width 같이 써줘야됨 */
 #header .wrap .gap {margin:0 15px;}
 #header .wrap .gap .left {float:left;padding:22.5px 0;transition:all .3s;}
@@ -42,7 +42,13 @@
 #header .wrap .gap .right .mobile > a.addClose .mline2 {display:none;}
 #header .wrap .gap .right .mobile > a .mline3 {bottom:0;}
 #header .wrap .gap .right .mobile > a.addClose .mline3 {bottom:50%;margin-bottom:-1px;transform:rotate(135deg);}
-
+/* 모바일 메뉴 */
+#header .wrap .gap .right .mobile-menu {display:none;position:absolute;top:75px;left:0;width:100%;}
+#header.addMobile .wrap .gap .right .mobile-menu {top:66px;}
+#header .wrap .gap .right .mobile-menu > ul {width:100%;}
+#header .wrap .gap .right .mobile-menu > ul > li {width:100%;border-top:1px solid #ccc;}
+#header .wrap .gap .right .mobile-menu > ul > li:first-child {border-style:none;}
+#header .wrap .gap .right .mobile-menu > ul > li > a {display:block;width:100%;line-height:50px;text-indent:24px;letter-spacing:2px;font-size:12px;font-weight:600;color:#ccc;background:rgba(0,0,0, .7);}
 
 #main   {z-index:2;position:relative;width:100%;}
 #main #section01/*넓이, 높이, 배경으로 확인하는게 제일 첫 순서*/ {z-index:1;position:relative;width:100%;background:url(../img/slider-img4.jpg) no-repeat 50% 0 fixed/* 스크롤안됨 */;background-size:100% 100%;}

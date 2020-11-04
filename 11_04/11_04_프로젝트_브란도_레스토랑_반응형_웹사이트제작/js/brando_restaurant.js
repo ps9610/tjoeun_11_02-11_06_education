@@ -25,10 +25,12 @@
             //smooth scrolling = a href의 속성 중 하나인 (a href=#) hashtag 가져와서 해당 섹션으로 부드럽게 이동
             var url = null; //null이면 이동안되고 null이 아니면 해당 섹션으로 이동하게 하려고
             $(".smooth-btn").on({ //스무스 버튼을
-                click : function(){ //클릭하면 다음과 같이 실행하라 : 
+                click : function(event){ //클릭하면 다음과 같이 실행하라 : 
+                    event.preventDefault();
                     url = $(this).attr("href"); // url은 이 선택자의 속성을 가져오는 것이고,
                    $("html,body").stop().animate({ scrollTop: $( url ).offset().top },800) //html,body에서 0.6초 동안에url의 탑 값으로 스크롤 탑이라는 애니메이션이 실행되게 하라.
                    $(".mobile-menu").hide();
+                   $(".mobile-btn").removeClass("addClose");
                 }
             });
 
@@ -55,7 +57,8 @@
 
             //btn-click
             $(".mobile-btn").on({
-                click : function(){
+                click : function(event){
+                    event.preventDefault();
                     $(this).toggleClass("addClose");
                     $(".mobile-menu").stop().slideToggle(300);//한번은 내려가고 한번은 올라가고
                 }

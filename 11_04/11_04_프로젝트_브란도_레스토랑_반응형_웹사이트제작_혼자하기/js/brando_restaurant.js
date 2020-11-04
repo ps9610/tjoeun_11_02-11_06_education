@@ -31,6 +31,8 @@
                click:function(){
                    url = $(this).attr("href")
                    $("html,body").stop().animate({ scrollTop : $( url ).offset().top },800)
+                   $(".mobile-menu").hide();
+                   $(".mobile-btn").removeClass("addClose");
                }
            })
 
@@ -51,13 +53,16 @@
                 winW = $(window).width();
                 if( winW>990 ){
                     $(".mobile-btn").removeClass("addClose");
+                    $(".mobile-menu").hide();
                 }
             });
 
             //btn-click
             $(".mobile-btn").on({
-                click : function(){
+                click : function(e){
+                    e.preventDefault();
                     $(this).toggleClass("addClose");
+                    $(".mobile-menu").slideToggle();
                 }
             });
 
@@ -83,7 +88,8 @@
             };
             //Smooth Scrolling Event
             $(".arrow-down-btn").on({
-                click : function(){
+                click : function(e){
+                    e.preventDefault();
                     $("html,body").stop().animate({ scrollTop : $("#section02").offset().top},700);
                 }
             });
