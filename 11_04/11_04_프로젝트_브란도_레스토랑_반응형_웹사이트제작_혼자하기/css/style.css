@@ -1,0 +1,58 @@
+@charset "UTF-8";
+ 
+#header {z-index:3;position:fixed;top:0;left:0;width:100%;border-bottom:1px solid rgba(225,225,225, 0.1);background:transparent;transition:height .3s, background-color .5s;}
+#header.addMobile {height:65px;background:rgba(0,0,0, .7);}
+#header .wrap {max-width:1170px;width:100%;margin:0 auto;}
+            /* ㄴ> 앞으로 반응형이니까 모두 max-width, width 같이 써줘야됨 */
+#header .wrap .gap {margin:0 15px;}
+#header .wrap .gap .left {float:left;padding:22.5px 0;transition:all .3s;}
+#header.addMobile .wrap .gap .left {padding:15px 0;}
+#header .wrap .gap .left .logo {display:inline-block;}
+#header .wrap .gap .left .logo > a {display:inline-block;}
+#header .wrap .gap .left .logo > a > img {width:156px;height:30px;}
+#header .wrap .gap .left .logo > i {display:inline-block;margin:0 30px 0 22px;width:1px;height:21px;background:#fff;opacity:.8;}
+
+#header .wrap .gap .left  #nav {display:inline-block;}
+#header .wrap .gap .left  #nav > ul {display:inline-block;}
+#header .wrap .gap .left  #nav > ul > li {display:inline-block;margin-right:38px;}
+#header .wrap .gap .left  #nav > ul > li:last-child {margin-right:0;}
+#header .wrap .gap .left  #nav > ul > li > a {color:#fff;font-size:12px;font-weight:700;transition:color .3s;}
+#header .wrap .gap .left  #nav > ul > li > a:hover {color:#ccc;}
+#header .wrap .gap .left  #nav > ul > li > a:focus {color:#ccc;}
+
+#header .wrap .gap .right {float:right;}
+#header .wrap .gap .right #aside {color:#fff;}
+#header .wrap .gap .right #aside > div {padding:26.5px 0;}
+#header.addMobile .wrap .gap .right #aside > div {padding:19px 0;}
+#header .wrap .gap .right #aside > div > span {display:inline-block;font-size:11px;font-weight:600;letter-spacing:.5px;}
+#header .wrap .gap .right #aside > div > span:nth-child(2) {margin-left:10px;}
+#header .wrap .gap .right #aside > div > span:nth-child(2) > a {display:block;padding:5.5px 12px;border:2px solid #fff;color:#fff;font-size:11px;transition:all .5s;}
+#header .wrap .gap .right #aside > div > span:nth-child(2) > a:hover {color:#000;background:#fff;}
+#header .wrap .gap .right #aside > div > span:nth-child(2) > a:focus {color:#000;background:#fff;}
+
+/* 모바일 전용 */
+#header .wrap .gap .right .mobile {display:none;width:22px;height:14px;margin:30.5px 0;transition:margin .3s;}
+#header.addMobile .wrap .gap .right .mobile {margin:23px 0;}
+#header .wrap .gap .right .mobile > a {position:relative;display:block;width:100%;height:100%;}
+#header .wrap .gap .right .mobile > a .mline {transition:all .3s;position:absolute;left:0;width:100%;height:2px;background:#fff;}
+#header .wrap .gap .right .mobile > a .mline1 {top:0;}
+#header .wrap .gap .right .mobile > a.addClose .mline1 {top:50%;margin-top:-1px;transform:rotate(45deg);}
+#header .wrap .gap .right .mobile > a .mline2 {top:50%;margin-top:-1px;}
+#header .wrap .gap .right .mobile > a.addClose .mline2 {display:none;}
+#header .wrap .gap .right .mobile > a .mline3 {bottom:0;}
+#header .wrap .gap .right .mobile > a.addClose .mline3 {bottom:50%;margin-bottom:-1px;transform:rotate(135deg);}
+
+
+#main   {z-index:2;position:relative;width:100%;}
+#main #section01/*넓이, 높이, 배경으로 확인하는게 제일 첫 순서*/ {z-index:1;position:relative;width:100%;background:url(../img/slider-img4.jpg) no-repeat 50% 0 fixed/* 스크롤안됨 */;background-size:100% 100%;}
+#main #section01::after {z-index:2;position:absolute;content:"";display:block;top:0;left:0;width:100%;height:100%;background:#252525;opacity:.7;}
+#main #section01 .hungry {z-index:3;position:absolute;display:inline-block;top:382px;width:100%;text-align:center;}/* 높이 잡으면 여기 박스도 반응형으로 만들어야되니까 높이X */
+#main #section01 .hungry > img {width:100%;max-width:542px;}/* max(min)-width ; 반응형할 때 많이 씀, hungry자체가 넓이 100%니까 max가 되는거임*/
+#main #section01 .arrow-down {z-index:3;position:absolute;bottom:60px;left:50%;margin-left:-16px;display:inline-block;width:32px;height:32px;}
+#main #section01 .arrow-down > a {display:block;width:100%;}
+#main #section01 .arrow-down > a > img {width:100%;}
+
+#main #section02 {width:100%;height:969px;background:url(../img/restaurant-img1.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#main #section03 {width:100%;height:969px;background:url(../img/restaurant-img2.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#main #section04 {width:100%;height:969px;background:url(../img/restaurant-img3.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#footer {z-index:1;position:relative;width:100%;}/* 모든 창높이는 본인 모니터의 창 높이로 */
