@@ -21,6 +21,19 @@
                 that.footerFn();
         },//브란도 레스토랑 전체에서 최초에 실행할 js
         headerFn:       function(){
+           //헤더의 메뉴 이동할 때 부드럽게 이동하게 하기
+           //1.헤더의 a href에 달아준 공통 class명 smooth-btn 가져오기
+           //ㄴ>attr("hrdf") 메소드 사용
+           //2.클릭 이벤트 사용해서 탑 값 맞추기
+
+           var url = null;
+           $(".smooth-btn").on({
+               click:function(){
+                   url = $(this).attr("href")
+                   $("html,body").stop().animate({ scrollTop : $( url ).offset().top },800)
+               }
+           })
+
             //scrolling
             $(window).scroll(function(){
                 if( $(window).scrollTop()>=30 ){

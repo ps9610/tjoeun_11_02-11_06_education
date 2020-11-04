@@ -61,7 +61,7 @@
 
         },//헤더의 js
         section01Fn:    function(){
-           
+
             var winH = 969;
             //뭘 먼저 해야할지 우선순위 정리가 가장 첫번째
             //1. hungry 이미지 탑 값 구하기 = (window top - hungry높이)/2;            
