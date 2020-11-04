@@ -8,7 +8,7 @@
     <meta name="Viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Title" content="Brando Restaurant">
     <meta name="Publisher" content="프론트엔드 박소혜">
-    <meta name="Author-date" content="2020-11-03"> 
+    <meta name="Author-date" content="2020-11-04"> 
     <meta name="Author" content="Brando">
     <meta name="Copyright" content="Brando">
     <meta name="Keywords" content="Brando, 웹표준,웹접근성,Bransdo Restaurant, Brando 반응형 웹사이트">
@@ -49,7 +49,7 @@
     <![endif]-->
  
 </head>
-<body>
+<body id="intro">
 <ul id="skip">
     <li><a href="#header" title="메뉴바로가기">메뉴바로가기</a></li>
     <li><a href="#main" title="메인바로가기">메인바로가기</a></li>
@@ -61,18 +61,19 @@
             <div class="gap fixedclear"> <!-- 양쪽패딩15px씩 전체넓이1140 -->
                 <div class="left">
                     <h1 class="logo">
-                        <a href="#" class="logo-btn" title="브란드 로고">
+                        <a href="#intro" class="logo-btn smooth-btn" title="브란드 로고">
                             <img src="./img/logo-restaurant.png" alt="브란도(Brando)">
                         </a><i></i>
                     </h1>
                     <nav id="nav">
                         <ul class="fixedclear">
-                            <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">ABOUT</a></li>
-                            <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">MENU</a></li>
-                            <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">CHEF</a></li>
-                            <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">GALLERY</a></li>
-                            <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">BLOG</a></li>
-                            <li><a href="javascript:void(0)" class="main-btn" title="메인메뉴">CONTACT</a></li>
+                                        <!-- 👇여기 id 아니면 안됨 -->
+                            <li><a href="#section05" class="main-btn smooth-btn" title="메인메뉴">ABOUT</a></li>
+                            <li><a href="#section06" class="main-btn smooth-btn" title="메인메뉴">MENU</a></li>
+                            <li><a href="#section07" class="main-btn smooth-btn" title="메인메뉴">CHEF</a></li>
+                            <li><a href="#section09" class="main-btn smooth-btn" title="메인메뉴">GALLERY</a></li>
+                            <li><a href="#section11" class="main-btn smooth-btn" title="메인메뉴">BLOG</a></li>
+                            <li><a href="#section13" class="main-btn smooth-btn" title="메인메뉴">CONTACT</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -80,7 +81,7 @@
                     <aside id="aside">
                         <div>
                             <span>BOOK YOUR TABLES?</span>
-                            <span><a href="#" title="예약하기 버튼">BOOK NOW</a></span>
+                            <span><a href="#section13" class="smooth-btn" title="예약하기 버튼">BOOK NOW</a></span>
                         </div>
                     </aside>
                     <div class="mobile">
@@ -97,7 +98,7 @@
     <main id="main">
         <section id="section01"> <!-- 작업순서 1번(왜냐면 얘가 있어야 header가 보임) -->
             <span class="hungry"><img src="./img/hungry.png" alt="메인 타이틀"></span>
-            <span class="arrow-down"><a href="javascript:void(0)" class="arrow-down-btn" title="아래 버튼"><img src="./img/arrow-down.png" alt="밑으로 이동하기"></a></span>
+            <span class="arrow-down"><a href="#section02" class="arrow-down-btn smooth-btn" title="아래 버튼"><img src="./img/arrow-down.png" alt="밑으로 이동하기"></a></span>
         </section>
         <section id="section02">
 
@@ -133,6 +134,9 @@
 
         </section>
         <section id="section13">
+
+        </section>
+        <section id="section14">
 
         </section>
     </main>

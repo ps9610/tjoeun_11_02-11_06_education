@@ -1,4 +1,4 @@
-;(function(window,document,$,undefined){ 
+;(function(window,document,$,undefined){ //항상 밑에서 위로 보기(업데이트 항목은 위로 써줌)
 
     var brando = {
         
@@ -21,6 +21,16 @@
                 that.footerFn();
         },//브란도 레스토랑 전체에서 최초에 실행할 js
         headerFn:       function(){
+            //속성을 변수로 둬서 이동시키면 됨
+            //smooth scrolling = a href의 속성 중 하나인 (a href=#) hashtag 가져와서 해당 섹션으로 부드럽게 이동
+            var url = null; //null이면 이동안되고 null이 아니면 해당 섹션으로 이동하게 하려고
+            $(".smooth-btn").on({ //스무스 버튼을
+                click : function(){ //클릭하면 다음과 같이 실행하라 : 
+                    url = $(this).attr("href"); // url은 이 선택자의 속성을 가져오는 것이고,
+                   $("html,body").stop().animate({ scrollTop: $( url ).offset().top },800) //html,body에서 0.6초 동안에url의 탑 값으로 스크롤 탑이라는 애니메이션이 실행되게 하라.
+                }
+            });
+
             //scrolling
             $(window).scroll(function(){
                 if( $(window).scrollTop()>=30 ){
@@ -113,6 +123,9 @@
             
         },
         section13Fn:    function(){
+            
+        },
+        section14Fn:    function(){
             
         },
         footerFn:         function(){
