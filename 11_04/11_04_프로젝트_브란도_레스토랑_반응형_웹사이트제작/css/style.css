@@ -73,4 +73,12 @@
 #main #section14 {width:100%;height:568px;border:1px solid rgba(0,0,0, .1);padding:130px 0 130px 0;}
 
 #footer {z-index:1;position:relative;width:100%;}/* 모든 창높이는 본인 모니터의 창 높이로 */
-#footer .icons {width:1170px;margin:0 auto;text-align:center;}
+#footer .icons {width:1170px;margin:50px auto;text-align:center;}
+#footer .icons > li {display:inline-block;margin:0 3px;}
+#footer .icons > li > a {display:block;width:30px;height:30px;line-height:30px;color:#fff;}
+#footer .icons > li:nth-child(1) > a {background:#3b5998;}
+#footer .icons > li:nth-child(2) > a {background:#00aced;}
+#footer .icons > li:nth-child(3) > a {background:#ea4c89;}
+#footer .icons > li:nth-child(4) > a {background:#b00;}
+#footer .icons > li:nth-child(5) > a {background:#007bb6;}
+#footer .icons > li > a > i {font-size:14px;}
