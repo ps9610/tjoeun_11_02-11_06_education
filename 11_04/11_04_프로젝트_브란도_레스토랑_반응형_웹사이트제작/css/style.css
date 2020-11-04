@@ -41,6 +41,12 @@
 #header .wrap .gap .right .mobile > a.addClose .mline2 {display:none;}
 #header .wrap .gap .right .mobile > a .mline3 {bottom:0;}
 #header .wrap .gap .right .mobile > a.addClose .mline3 {bottom:50%;margin-bottom:-1px;transform:rotate(135deg);}
+/* 모바일 전용 메뉴 */
+#header .wrap .gap .right .mobile-menu {display:none;position:absolute;top:75px;left:0;width:100%;transition:top .2s;}
+#header.addMobile .wrap .gap .right .mobile-menu {top:60px;}
+#header .wrap .gap .right .mobile-menu > ul {width:100%;}
+#header .wrap .gap .right .mobile-menu > ul > li {text-indent:20px;/* 글자들여쓰기 */;border-top:1px solid #222;background:#000;}
+#header .wrap .gap .right .mobile-menu > ul > li > a {display:blcok;width:100%;line-height:50px;background:#000;color:#ccc;font-weight:600;font-size:12px;letter-spacing:2px;}
 
 
 #main   {z-index:2;position:relative;width:100%;}

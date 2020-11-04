@@ -48,6 +48,7 @@
                 winW = $(window).width();
                 if( winW>990 ){
                     $(".mobile-btn").removeClass("addClose");
+                    $(".mobile-menu").stop().slideUp(0);
                 }
             });
 
@@ -55,6 +56,7 @@
             $(".mobile-btn").on({
                 click : function(){
                     $(this).toggleClass("addClose");
+                    $(".mobile-menu").stop().slideToggle(300);//한번은 내려가고 한번은 올라가고
                 }
             });
 
