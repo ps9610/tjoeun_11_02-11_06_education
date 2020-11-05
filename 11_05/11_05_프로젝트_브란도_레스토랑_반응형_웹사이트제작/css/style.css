@@ -58,9 +58,30 @@
 #main #section01 .arrow-down > a {display:block;width:100%;}
 #main #section01 .arrow-down > a > img {width:100%;}
 
-#main #section02 {width:100%;height:969px;background:url(../img/restaurant-img1.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#main .section234 {width:100%;height:969px;background:url(../img/restaurant-img1.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+#main .section234 .wrap {width:1170px;margin:0 auto;height:100%;}
+#main .section234 .wrap .gap {margin:0 15px;height:100%;}
+#main .section234 .wrap .gap .container {position:relative;width:100%;height:100%;}
+#main .section234 .wrap .gap .container .content {position:absolute;top:21.620227%;right:0;width:450px;height:550px;background:#fff;outline:8px solid #d8b75f;outline-offset:-28px;}
+                                                /*(px : 상대크기(단위)) ㄴ>높이에 따라서 바뀌는 반응형 단위(%)*/        
+#main #section03 .wrap .gap .container .content {left:0;}
+#main .section234 .wrap .gap .container .content .content-gap {margin:17.77777777777778%;}/* 넓이에 따라서 마진값도 작아져야되니까 px말고 % 단위로 */
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap {width:100%;text-align:center;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h2 {width:auto;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h2 > img {width:auto;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h3 {padding:15px 0 10px 0;font-size:24px;font-weight:800;color:#614c45;letter-spacing:2px;font-family:"Montserrat";}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h4 {font-size:11px;letter-spacing:1px;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h5 {padding:25px 0 25px 0;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h5 > img {width:auto;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > p {font-size:14px;line-height:180%;padding-bottom:30px;letter-spacing:.6px;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h6 {width:100%;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h6 > a {display:inline-block;}
+#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h6 > a > img {width:auto;}
+
 #main #section03 {width:100%;height:969px;background:url(../img/restaurant-img2.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+
 #main #section04 {width:100%;height:969px;background:url(../img/restaurant-img3.jpg) no-repeat 50% 0 fixed;background-size:cover;}
+
 #main #section05 {width:100%;height:860px;padding:130px 0;}
 #main #section06 {width:100%;height:740px;background:#fff;}
 #main #section07 {width:100%;height:782px;padding:130px 0;}
