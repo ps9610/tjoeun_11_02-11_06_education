@@ -61,7 +61,7 @@
 /* breakfast같은 독립된 박스는 반응형 계산 까다로움 */
 #main .section234 {width:100%;height:969px;background:url(../img/restaurant-img1.jpg) no-repeat 50% 0 fixed;background-size:cover;}
 #main .section234 .wrap {width:100%;max-width:1170px;margin:0 auto;height:100%;}/* 실제 보이는 넓이는 1140px이지만 마진 포함된 찐 전체넓이는 1170px */
-#main .section234 .wrap .gap {/* margin:0 15px; */height:100%;}/* 너비 안쓰면 auto */
+#main .section234 .wrap .gap {margin:0 15px;height:100%;}/* 너비 안쓰면 auto */
 #main .section234 .wrap .gap .container {position:relative;width:100%;height:100%;}/*문서전체넓이를 100프로 다 쓰겠다*/
 #main .section234 .wrap .gap .container .content {position:absolute;top:209.5px;/* top:21.620227%; */right:0;width:100%;max-width:450px;height:550px;background:#fff;outline:8px solid #d8b75f;outline-offset:-28px;}
                                                                 /*(px : 상대크기(단위)) ㄴ>높이에 따라서 바뀌는 반응형 단위(%) ㄴ>px(고정값)=반응형안됨 */        
