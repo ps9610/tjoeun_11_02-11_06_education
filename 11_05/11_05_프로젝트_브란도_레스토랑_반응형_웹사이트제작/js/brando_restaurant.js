@@ -1,7 +1,6 @@
 ;(function(window,document,$,undefined){ //항상 밑에서 위로 보기(업데이트 항목은 위로 써줌)
 
     var brando = {
-        
         init:           function(){ 
             var that=this;
                 that.headerFn();
@@ -21,6 +20,7 @@
                 that.section14Fn();
                 that.footerFn();
         },//브란도 레스토랑 전체에서 최초에 실행할 js
+
         headerFn:       function(){
             //속성을 변수로 둬서 이동시키면 됨
             //smooth scrolling = a href의 속성 중 하나인 (a href=#) hashtag 가져와서 해당 섹션으로 부드럽게 이동
@@ -87,6 +87,7 @@
                 imgTop = (winH-imgH)/2;
                 $(".hungry").css({ top:imgTop });
             };
+
             //Smooth Scrolling Event
             $(".arrow-down-btn").on({
                 click : function(){
@@ -99,7 +100,67 @@
             });
         },
         section02Fn:    function(){
+            //해당 섹션의 폰트사이즈 비율
+            var txtBoxW = 0;
+            var fontRateH3 = 0.082758621;//h3글자크기(24px)/텍스트박스너비; = 24/txtBoxW;
+            var fontRateH4 = 0.037931034;//h4글자크기/텍스트박스너비; = 11/txtBoxW;
+            var fontRateP = 0.048275862;//p글자크기/텍스트박스너비; = /txtBoxW;
+            var fontSizeH3 = 0;//텍스트박스 너비 * 24px의 비율
+            var fontSizeH4 = 0;//텍스트박스 너비 * 24px의 비율
+            var fontSizeP =  0;//텍스트박스 너비 * 24px의 비율
+            var boxHRate = 1.2222222;
+            var boxW = 450;
+            var boxH = boxW * boxHRate; //박스높이 = 박스너비 * 박스 높이의 비율;
+            var winH = 0;
+            var boxT = 0; //(창높이-박스높이)/2;
+            var winW = 0;
+            var boxR = 0; // 박스의 right 값 구하기 = (창 넓이=winW - 박스넓이) / 2;
+            var boxL = 0; // 박스의 left 값 구하기 = (창 넓이=winW - 박스넓이) / 2; = boxR
 
+            setTimeout(resizeFn,100);
+
+            //해당 섹션의 폰트사이즈 비율
+            function resizeFn(){
+                
+            txtBoxW = $(".content-wrap").width(); 
+            boxW = $(".content").width(); 
+            boxH = boxW * boxHRate;
+            fontSizeH3 =  txtBoxW * fontRateH3;
+            fontSizeH4 =  txtBoxW * fontRateH4;
+            fontSizeP =  txtBoxW * fontRateP;
+            winH = $(window).height();
+            boxT = (winH-boxH)/2; //(창높이-박스높이)/2;
+            winW = $(window).width();
+            boxR = (winW-boxW)/2; 
+            boxL = boxR 
+            //console.log ( "창넓이" ,winW );
+            //console.log ( "박스 넓이 ",boxW );
+            //console.log ( "박스 right값 ",boxR );
+            //console.log ( "박스 left값 ",boxL ); 
+
+            $(".content-wrap h3").css({fontSize:fontSizeH3});
+                $(".content-wrap h4").css({fontSize:fontSizeH4});
+                $(".content-wrap p").css({fontSize:fontSizeP});
+
+                $(".content").css({height:boxH,top:boxT});
+
+                //창 너비가 1170이하이면 실행
+                if(winW <= 1170){
+                    $(".content24").stop().animate({right:boxR,},300);//css는 그냥 위치만 바뀌고 animate는 움직이는것
+                    $(".content3").stop().animate({left:boxL},300);
+                }
+                else{
+                    $(".content24").stop().animate({right:0,},300);
+                    $(".content3").stop().animate({left:0,},300);
+                }
+            }
+            // console.log( "텍스트박스 너비 ", txtBoxW, "글자크기비율", fontRateH3, "실제글자크기", fontSizeH3 );
+            // console.log( "텍스트박스 너비 ", txtBoxW, "글자크기비율", fontRateH4, "실제글자크기", fontSizeH4 );
+            // console.log( "텍스트박스 너비 ", txtBoxW, "글자크기비율", fontRateP, "실제글자크기", fontSizeP );
+
+            $(window).resize(function(){
+                resizeFn();
+            });
         },
         section03Fn:    function(){
 
