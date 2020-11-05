@@ -38,9 +38,11 @@
             $(window).scroll(function(){
                 if( $(window).scrollTop()>=30 ){
                     $("#header").addClass("addMobile")
+                    $(".go-top").addClass("addGo")
                 }
                 else{
                     $("#header").removeClass("addMobile")
+                    $(".go-top").removeClass("addGo")
                 }
             });
 
