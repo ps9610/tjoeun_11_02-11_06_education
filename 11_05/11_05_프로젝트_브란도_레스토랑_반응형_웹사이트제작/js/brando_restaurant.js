@@ -18,6 +18,7 @@
                 that.section11Fn();
                 that.section12Fn();
                 that.section13Fn();
+                that.section14Fn();
                 that.footerFn();
         },//브란도 레스토랑 전체에서 최초에 실행할 js
         headerFn:       function(){
@@ -38,9 +39,11 @@
             $(window).scroll(function(){
                 if( $(window).scrollTop()>=30 ){
                     $("#header").addClass("addMobile")
+                    $(".goTop").addClass("addGotop")
                 }
                 else{
                     $("#header").removeClass("addMobile")
+                    $(".goTop").removeClass("addGotop")
                 }
             });
 
