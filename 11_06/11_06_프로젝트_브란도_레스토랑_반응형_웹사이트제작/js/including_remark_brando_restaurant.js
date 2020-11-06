@@ -204,7 +204,7 @@ section234Fn:    function(){
      //변수 박스 탑 값 = (창높이-박스높이)/2;
      //var = (windowHeight-boxHeight)/2;
 
-    //창 높이가 content-wrap보다 작을 때 content-wrap가 안 넘어가게 유지하기
+    //창 높이가 content-wrap보다 작을 때 content-wrap이 창 높이를 안 넘어가게 유지하기
         //ㄴ>그럼 창 높이랑 content-wrap top값이 같이 줄어들게 하면 됨
         //function resizeFn(){ windowHeight = $(window).height();를 조정한다.
         // $("#section01, #section02, #section03, #section04").css({ height:winH });에서 
@@ -270,7 +270,7 @@ section234Fn:    function(){
     setTimeout(resizeFn,100);
 
     function resizeFn(){
-            
+        
         rl = (windowWidth-boxWidth)/2;
         windowWidth = $(window).width(); //1170
         windowHeight = $(window).height(); //969
@@ -282,18 +282,14 @@ section234Fn:    function(){
         //조건같이 계산 해야 되는 것들 따로
         if(windowHeight < boxHeight){
             section234Height = boxHeight;
-            boxTop = 0;
+            boxTop = 0; //section2(3, 4) 꼭대기에 딱 붙어서 더이상 위로 못 올라가게
         }
         else{
             section234Height = windowHeight;
             boxTop = (windowHeight-boxHeight)/2;
-        }
+        };
 
-    console.log( boxHeight );
-    $(".content-wrap").css({ top:boxTop, height:boxHeight });
-    $(".section234").css({ height:section234Height });
-    
-        if( windowWidth <= 1170 ){
+        if( windowWidth <= 1170 ){ // boxWidth의 부모 넓이가 1170px이기 때문에 기준을 1170으로 잡음
             $("#section02 .content-wrap, #section04 .content-wrap").stop().animate({ right:rl-15 },300);
             // $("#section02 .content-wrap, #section04 .content-wrap").css({ right:rl-15 }) : 애니메이션 하기 전
             // $("#section02 .content-wrap, #section04 .content-wrap").css({ right:rl-15 = 마진값 빼줘야 한쪽으로 안 치우치고 중앙에 옴});
@@ -302,17 +298,17 @@ section234Fn:    function(){
         else{
             $("#section02 .content-wrap, #section04 .content-wrap").stop().animate({ right:0 },100);
             $("#section03 .content-wrap").stop().animate({ left:0 },100);
-        }
+        };
     };
 
     //DOM 구조 따로 정리하기
-    $(".content-wrap").css({ top:boxTop });
+    $(".content-wrap").css({ top:boxTop, height:boxHeight });
     $(".section234").css({height:section234Height});
-
     $(window).resize(function(){
         resizeFn();
     })
 },
+
 /*        section234Fn:    function(){} =
         section02Fn:function(){},
         section03Fn:function(){},
