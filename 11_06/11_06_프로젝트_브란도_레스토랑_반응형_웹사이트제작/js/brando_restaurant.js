@@ -19,23 +19,19 @@
                 that.section13Fn();
                 that.section14Fn();
                 that.footerFn();
-        },//브란도 레스토랑 전체에서 최초에 실행할 js
+        },//브란도에서 최초 실행될 js
 
         headerFn:       function(){
-            //속성을 변수로 둬서 이동시키면 됨
-            //smooth scrolling = a href의 속성 중 하나인 (a href=#) hashtag 가져와서 해당 섹션으로 부드럽게 이동
-            var url = null; //null이면 이동안되고 null이 아니면 해당 섹션으로 이동하게 하려고
-            $(".smooth-btn").on({ //스무스 버튼을
-                click : function(event){ //클릭하면 다음과 같이 실행하라 : 
+            var url = null; 
+            $(".smooth-btn").on({ 
+                click : function(event){ 
                     event.preventDefault();
-                    url = $(this).attr("href"); // url은 이 선택자의 속성을 가져오는 것이고,
-                   $("html,body").stop().animate({ scrollTop: $( url ).offset().top },800) //html,body에서 0.6초 동안에url의 탑 값으로 스크롤 탑이라는 애니메이션이 실행되게 하라.
-                                            //현재 스크롤의 위치값
-                   $(".mobile-menu").hide();
+                    url = $(this).attr("href");
+                   $("html,body").stop().animate({ scrollTop: $( url ).offset().top },800) 
                    $(".mobile-btn").removeClass("addClose");
                 }
             });
-       
+
             //scrolling
             $(window).scroll(function(){
                 if( $(window).scrollTop()>=30 ){
@@ -54,7 +50,6 @@
             $(window).resize(function(){
                 winW = $(window).width();
                 if( winW>990 ){
-                    $(".mobile-btn").removeClass("addClose");
                     $(".mobile-menu").stop().slideUp(0);
                 }
             });
@@ -64,45 +59,27 @@
                 click : function(event){
                     event.preventDefault();
                     $(this).toggleClass("addClose");
-                    $(".mobile-menu").stop().slideToggle(300);//한번은 내려가고 한번은 올라가고
+                    $(".mobile-menu").stop().slideToggle(300);
                 }
             });
 
 
         },//헤더의 js
+
         section01Fn:    function(){
 
             var winH = 969;
             var imgH = $(".hungry").height();
             var imgTop = (winH-imgH)/2;
     
-            //뭘 먼저 해야할지 우선순위 정리가 가장 첫번째
-            //1. 창을 늘리고 줄일 때마다 섹션 1,2,3,4의 전체 높이가 같이 늘어났다 줄어들어야 하고 (전체 배경이 사진이니까)
-                //ㄴ>   1) 변하는 값 : (늘어났다 줄어들었다 하는) 창의 높이 
-                //          var winH = 0;
-                //      2)  창을 늘렸다 줄여야 하니까 resize함수 필요
-                //          function resizeFn(){}
-                //      3) winH가 브라우저 창의 높이라는 변수라고 설정해줌
-                //          winH = $(window).height();
-                //      4) 섹션 1234, 움직인다, 높이, 윈도우 창과 같은 값으로 라고 설정
-                //          $("#section01, #section02, #section03, #section04").stop().animate({ height:winH });
-            //2. 헝그리 이미지도 같이 늘어났다 줄어들게 함
-                //ㄴ>   1) 변하는 값 : 이미지 높이
-                //      2) 아까 만든 resizeFn에 같이 걸어주기
-                //          $(".hungry").stop().animate({height:winH});
-            
-
-                //1) hungry 이미지 탑 값 구하기 = (window top - hungry높이)/2;            
-                                //ㄴ> imgTop = (winH-imgH)/2;
             setTimeout(resizeFn,100);
             function resizeFn(){                
                 winH = $(window).height();
                 $("#section01, #section02, #section03, #section04").css({ height:winH });
                 
                 imgH = $(".hungry").height();
-                //imgTop = (winH-imgH)/2;
-                //$(".hungry").css({ top:imgTop });
-                $(".hungry").css({ imgH:winH });
+                imgTop = (winH-imgH)/2;
+                $(".hungry").css({ top:imgTop });
             };
 
             //Smooth Scrolling Event
@@ -119,20 +96,20 @@
         section02Fn:    function(){
             //해당 섹션의 폰트사이즈 비율
             var txtBoxW = 0;
-            var fontRateH3 = 0.082758621;//h3글자크기(24px)/텍스트박스너비; = 24/txtBoxW;
-            var fontRateH4 = 0.037931034;//h4글자크기/텍스트박스너비; = 11/txtBoxW;
-            var fontRateP = 0.048275862;//p글자크기/텍스트박스너비; = /txtBoxW;
-            var fontSizeH3 = 0;//텍스트박스 너비 * 24px의 비율
-            var fontSizeH4 = 0;//텍스트박스 너비 * 24px의 비율
-            var fontSizeP =  0;//텍스트박스 너비 * 24px의 비율
+            var fontRateH3 = 0.082758621;
+            var fontRateH4 = 0.037931034;
+            var fontRateP = 0.048275862;
+            var fontSizeH3 = 0;
+            var fontSizeH4 = 0;
+            var fontSizeP =  0;
             var boxHRate = 1.2222222;
             var boxW = 450;
-            var boxH = boxW * boxHRate; //박스높이 = 박스너비 * 박스 높이의 비율;
+            var boxH = 0; 
             var winH = 0;
-            var boxT = 0; //(창높이-박스높이)/2;
+            var boxT = 0; 
             var winW = 0;
-            var boxR = 0; // 박스의 right 값 구하기 = (창 넓이=winW - 박스넓이) / 2;
-            var boxL = 0; // 박스의 left 값 구하기 = (창 넓이=winW - 박스넓이) / 2; = boxR
+            var boxR = 0; 
+            var boxL = 0; 
 
             setTimeout(resizeFn,100);
 
@@ -146,7 +123,7 @@
             fontSizeH4 =  txtBoxW * fontRateH4;
             fontSizeP =  txtBoxW * fontRateP;
             winH = $(window).height();
-            boxT = (winH-boxH)/2; //(창높이-박스높이)/2;
+            boxT = (winH-boxH)/2; 
             winW = $(window).width();
             boxR = (winW-boxW)/2; 
             boxL = boxR 
@@ -163,7 +140,7 @@
 
                 //창 너비가 1170이하이면 실행
                 if(winW <= 1170){
-                    $(".content24").stop().animate({right:boxR,},300);//css는 그냥 위치만 바뀌고 animate는 움직이는것
+                    $(".content24").stop().animate({right:boxR,},300);
                     $(".content3").stop().animate({left:boxL},300);
                 }
                 else{
