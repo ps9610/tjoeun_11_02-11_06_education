@@ -114,9 +114,18 @@
             <span class="hungry"><img src="./img/hungry.png" alt="메인 타이틀"></span>
             <span class="arrow-down"><a href="#section02" class="arrow-down-btn smooth-btn" title="아래 버튼"><img src="./img/arrow-down.png" alt="밑으로 이동하기"></a></span>
         </section>
+        <!-- 섹션 2 3 4가 똑같아서 2만 잘 만들어서 3 4에 붙여넣기 하면 됨 -->
 
         <section id="section02" class="section234"> <!-- 줄구분 -->
-        
+            <div class="wrap"> <!-- 전체 넓이 1170px로 써줌  -->
+                <div class="gap"> <!-- 실제 넓이는 1140px이라 양쪽 15px씩 여백용 요소 넣어줌 -->
+                    <div class="container"> <!-- 문서 실제 작업 공간 여기서부터 넓이 써줌 -->
+                        <div class="content-wrap"> <!-- 식사 시간, 메뉴 등에 대한 설명 -->
+                            <!-- 지금부터 고정값으로 높이 먼저 잡아주고 나중에 제이쿼리로 비율해주면 됨  -->
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section id="section03" class="section234">
         
@@ -176,9 +185,12 @@
             </a>
     </div>
     
-    <!-- <script src="./js/brando_restaurant.js"></script> -->
-    <script src="./js/including_remark_brando_restaurant.js"></script>
+    <!-- 사용자 제작 -->
+    <script src="./js/brando_restaurant.js"></script>
+    <!-- html과 css의 모든 DOM 문서를 읽어들이고, 그것들을 토대로, js가 입력된 코드에 맞춰서 해석함 -->
     
+    <!-- <script src="./js/including_remark_brando_restaurant.js"></script> -->
+
 </div>
 </body>
 </html>
