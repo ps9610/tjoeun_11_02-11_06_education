@@ -58,29 +58,7 @@
 #main #section01 .arrow-down > a {display:block;width:100%;}
 #main #section01 .arrow-down > a > img {width:100%;}
 
-/* breakfast같은 독립된 박스는 반응형 계산 까다로움 */
-#main .section234 {width:100%;height:969px;background:url(../img/restaurant-img1.jpg) no-repeat 50% 0 fixed;background-size:cover;}
-#main .section234 .wrap {width:100%;max-width:1170px;margin:0 auto;height:100%;}/* 실제 보이는 넓이는 1140px이지만 마진 포함된 찐 전체넓이는 1170px */
-#main .section234 .wrap .gap {margin:0 15px;height:100%;}/* 너비 안쓰면 auto */
-#main .section234 .wrap .gap .container {position:relative;width:100%;height:100%;}/*문서전체넓이를 100프로 다 쓰겠다*/
-#main .section234 .wrap .gap .container .content {position:absolute;top:209.5px;/* top:21.620227%; */right:0;width:100%;max-width:450px;height:550px;background:#fff;outline:8px solid #d8b75f;outline-offset:-28px;}
-                                                                /*(px : 상대크기(단위)) ㄴ>높이에 따라서 바뀌는 반응형 단위(%) ㄴ>px(고정값)=반응형안됨 */        
-#main #section03 .wrap .gap .container .content {left:0;}
-#main .section234 .wrap .gap .container .content .content-gap {/* margin:80px; */margin:17.77777777777778%;} /* 부모박스 너비(450px)의 비율 */
-/* 넓이에 따라서 마진값도 작아져야되니까 px말고 % 단위로 */
-/* margin/padding top,bottom,left,right는 모두 너비에 걸려 계산된다. (높이 X) */
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap {width:100%;text-align:center;} /* 부모박스 너비(450-80=290px)의 비율 */
-                                                                                                                                    /* ㄴ>텍스트 길이 */
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h2 {width:auto;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h2 > img /* {width:auto;} */{width:15.51724%;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h3 {padding:/* 15px 0 10px 0 */5.17241379310345% 0 3.44827586206897% 0;font-size:24px;font-weight:800;color:#614c45;letter-spacing:2px;font-family:"Montserrat";}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h4 {font-size:11px;letter-spacing:1px;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h5 {padding:/* 25px 0 25px 0; */8.62068965517241% 0 8.62068965517241% 0;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h5 > img /* {width:auto;} */ {width:61.37931%;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > p {font-size:14px;line-height:180%;padding-bottom:/* 30px */10.3448275862069%;letter-spacing:.6px;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h6 {width:100%;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h6 > a {display:block;}
-#main .section234 .wrap .gap .container .content .content-gap .content-wrap > h6 > a > img /* {width:auto;} */{width:11.03448%;}/* 부모박스 너비(290px)의 비율 */
+#main #section02 {width:100%;height:969px;background:url(../img/restaurant-img1.jpg) no-repeat 50% 0 fixed;background-size:cover;}
 
 #main #section03 {width:100%;height:969px;background:url(../img/restaurant-img2.jpg) no-repeat 50% 0 fixed;background-size:cover;}
 
